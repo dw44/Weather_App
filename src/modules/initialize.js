@@ -1,5 +1,6 @@
-export default function initialize () {
+const initialize = function init () {
   function getLocation() {
+    console.log('Running from initialize.getLocation');
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(getCoords, setDefaultCoords);
     } else {
@@ -26,3 +27,4 @@ export default function initialize () {
   };
 }
 
+export default initialize;
