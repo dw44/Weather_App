@@ -6,11 +6,29 @@
   <title>Odin Weather</title>
   <link rel="stylesheet" href="./styles/reset.css">
   <link rel="stylesheet" href="./styles/style.css">
-  <script src="../src/modules/getWeather.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
   <header>
-
+    <h1 id="title">Odin Weather App</h1>
+    <form>
+      <input type="text" name="search-city" id="search-city">
+      <input type="submit" value="">
+    </form>
   </header>
+  <section id="weather-card">
+    <div id="weather">
+      <h2 id="location">City, Country</h2>
+      <p id="current-temperature">22 °C</p>
+      <p id="feels-like">Feels Like: 20 °C</p>
+      <p id="humidity">72%</p>
+      <p id="wind-speed">3.6 km/h</p>
+    </div>
+    <button id="switchUnits">C/F</button>
+    <div id="description">
+      <img src="./assets/cloud.svg">
+      <p id="description-text">Cloudy</p>
+    </div>
+  </section>
 </body>
 </html>
