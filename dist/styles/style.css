@@ -22,8 +22,10 @@ header {
 /* WEATHER DISPLAY */
 
 #weather-card {
-  margin: 30px 0;
+  margin: 30px auto;
   height: 240px;
+  min-width: 360px;
+  max-width: 600px;
   background-color: #7a7;
   display: flex;
   justify-content: space-between;
@@ -38,3 +40,8 @@ header {
   align-items: center;
 }
 
+#switchUnits {
+  height: 50px;
+  width: 50px;
+  align-self: center;
+}
