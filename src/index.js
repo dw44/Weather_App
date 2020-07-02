@@ -7,12 +7,15 @@ import unitConversion from './modules/unitConversion';
 window.onload = pageLoad;
 
 // Sets unit to display temperature. '1' for celsius, '2' for fahrenheit. Set to 1 by default
-const temperatureUnit = 1; 
+let temperatureUnit = 1; 
+// save a local copy of weather data to assist with unit conversion due to how 
+let weather = {};
 
 function pageLoad() {
   initialize().getLocation();
   getWeather().getFromCoordinates(localStorage.latitude, localStorage.longitude)
-  .then(weather => {
+  .then(weatherData => {
+    weather = {...weatherData}
     display().displayAll(weather, 1);
   })
   .catch(error => {
@@ -20,10 +23,15 @@ function pageLoad() {
   });
 }
 
+document.getElementById('switchUnits').onclick = changeUnit;
+
 function changeUnit() {
   if (temperatureUnit === 1) {
     temperatureUnit = 2;
+    document.getElementById('switchUnits').innerText = 'C';
   } else {
     temperatureUnit = 1;
+    document.getElementById('switchUnits').innerText = 'F';
   }
+  display().displayWeather(weather, temperatureUnit);
 }
