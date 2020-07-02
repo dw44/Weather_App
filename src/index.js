@@ -24,6 +24,7 @@ function pageLoad() {
   .catch(error => {
     console.log(error);
   });
+}
 
   function changeUnit() {
     // switch weather units on main weather display
@@ -35,4 +36,23 @@ function pageLoad() {
     document.getElementById('switchUnits').innerText = 'F';
   }
   display().displayWeather(weather, temperatureUnit);
+}
+
+// search form
+document.querySelector('#search').onclick = search; 
+
+function search(e) {
+  e.preventDefault();
+  const city = document.getElementById('search-city').value;
+  if(!!city) {
+    getWeather().getFromCityName(city)
+      .then(weatherData => {
+        weather = {...weatherData}
+        display().displayAll(weather, temperatureUnit);
+      })
+      .catch(error => {
+        console.log(error);
+        alert('Encountered an Error');
+      });
+  }
 }
