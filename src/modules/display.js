@@ -21,7 +21,7 @@ const display = function() {
   const displayAll = (weather, unit) => {
     document.getElementById('location').innerText = `${weather.name}, ${weather.sys.country}`;
     document.getElementById('humidity').innerText = `Humidity: ${weather.main.humidity}%`;
-    document.getElementById('wind-speed').innerText = `Wind Speed: ${weather.wind.speed}`;
+    document.getElementById('wind-speed').innerText = `Wind Speed: ${weather.wind.speed} km/h`;
     document.getElementById('description-text').innerText = weather.weather[0].description;
     displayWeather(weather, unit);
   }

@@ -4,7 +4,7 @@ import display from './modules/display';
 import unitConversion from './modules/unitConversion';
 
 // Prompt for permission to use location. set to toronto if denied. save to localstorage
-window.onload = pageLoad;
+window.onload = initialize().getLocation();
 document.getElementById('switchUnits').onclick = changeUnit;
 
 // Sets unit to display temperature. '1' for celsius, '2' for fahrenheit. Set to 1 by default
@@ -13,9 +13,7 @@ let temperatureUnit = 1;
 // save a local copy of weather data to assist with unit conversion due to how 
 let weather = {};
 
-function pageLoad() {
-  // display weather for user location or toronto on page load
-  initialize().getLocation();
+export default function showDefault() {
   getWeather().getFromCoordinates(localStorage.latitude, localStorage.longitude)
   .then(weatherData => {
     weather = {...weatherData}
@@ -26,7 +24,7 @@ function pageLoad() {
   });
 }
 
-  function changeUnit() {
+function changeUnit() {
     // switch weather units on main weather display
   if (temperatureUnit === 1) {
     temperatureUnit = 2;
@@ -44,6 +42,7 @@ document.querySelector('#search').onclick = search;
 function search(e) {
   e.preventDefault();
   const city = document.getElementById('search-city').value;
+  const weatherBackup = {...weather};
   if(!!city) {
     getWeather().getFromCityName(city)
       .then(weatherData => {
@@ -51,6 +50,7 @@ function search(e) {
         display().displayAll(weather, temperatureUnit);
       })
       .catch(error => {
+        weather = {...weatherBackup};
         console.log(error);
         alert('Encountered an Error');
       });
