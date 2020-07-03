@@ -1,20 +1,6 @@
-import getWeather from './getWeather';
-import display from './display';
 import showDefault from '../index';
 
 const initialize = function init () {
-  let weather = {};
-
-  // const showDefault = () => {
-  //   getWeather().getFromCoordinates(localStorage.latitude, localStorage.longitude)
-  //   .then(weatherData => {
-  //     display().displayAll(weatherData, 1);
-  //   })
-  //   .catch(error => {
-  //     console.log(error);
-  //   });
-  // }
-
   const getCoords = position => {
     localStorage.setItem('latitude', position.coords.latitude);
     localStorage.setItem('longitude', position.coords.longitude);
@@ -45,8 +31,7 @@ const initialize = function init () {
   return {
     getLocation,
     getCoords,
-    setDefaultCoords,
-    weather
+    setDefaultCoords
   };
 }
 

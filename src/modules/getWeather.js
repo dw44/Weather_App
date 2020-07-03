@@ -31,8 +31,7 @@ const getWeather = function weather () {
   return {
     getFromCoordinates,
     getFromCityName,
-    loadJson,
-    weather,
+    loadJson
   };
 }  
 
