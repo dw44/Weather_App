@@ -23,7 +23,13 @@ const display = function() {
     document.getElementById('humidity').innerText = `Humidity: ${weather.main.humidity}%`;
     document.getElementById('wind-speed').innerText = `Wind Speed: ${weather.wind.speed} km/h`;
     document.getElementById('description-text').innerText = weather.weather[0].description;
+    console.log(weather.weather[0]);
+    console.log(weather.weather[0].description);
     displayWeather(weather, unit);
+  }
+
+  const imageDesc = (desc) => {
+
   }
 
   return {
