@@ -3,6 +3,8 @@ import unitConversion from './unitConversion';
 const display = function() {
   const printWithUnits = (temperature, unit) => `${temperature}° ${unit}`;
 
+  const capitalizeFirst = text => `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
+
   const displayWeather = (weather, unit) => {
     if (unit === 1) {
       document.getElementById('current-temperature').innerText = `Current Temperature: ${printWithUnits(unitConversion().kelvinToCelsius(weather.main.temp).toFixed(1), 'C')}`;
@@ -22,17 +24,12 @@ const display = function() {
     document.getElementById('location').innerText = `${weather.name}, ${weather.sys.country}`;
     document.getElementById('humidity').innerText = `Humidity: ${weather.main.humidity}%`;
     document.getElementById('wind-speed').innerText = `Wind Speed: ${(weather.wind.speed * 3.6).toFixed(1)} km/h`;
-    document.getElementById('description-text').innerText = weather.weather[0].description;
+    document.getElementById('description-text').innerText = capitalizeFirst(weather.weather[0].description);
     document.getElementById('description-image').src = `./assets/${weather.weather[0].icon}@2x.png`;
     displayWeather(weather, unit);
   }
 
-  const imageDesc = (desc) => {
-
-  }
-
   return {
-    printWithUnits,
     displayWeather,
     displayAll,
   };

@@ -21,8 +21,6 @@ const initialize = function init () {
   
   return {
     getLocation,
-    getCoords,
-    setDefaultCoords
   };
 }
 

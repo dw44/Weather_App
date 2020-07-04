@@ -1,47 +1,106 @@
+/* ---------- IMPORTS AND BOILERPLATE */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster+Two:wght@700&family=Raleway:wght@500&display=swap');
+
 *, *:before,
 *:after {
   box-sizing: border-box;
 }
 
-/* HEADER */
+html {
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(to right top, #ffbf09, #dbd22a, #b6e052, #92eb7b, #6cf3a5, #13edca, #00e3e8, #00d7f8, #00b9ff, #0095ff, #0069ff, #000bff);
+}
+
+/* ---------- HEADER ---------- */
 
 header {
   width: 100%;
   min-width: 360px;
   height: 60px;
-  background-color: #77f;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Lobster Two', cursive;
+  text-align: center;
+  font-size: 2.5em;
+  padding: 8px 0;
+  vertical-align: middle;
 }
 
-#title {
-  font-size: 1.4em;
+/* ---------- SEARCH FORM ---------- */
+
+.fas {
+  font-size: 1.5em;
+}
+
+#search-form {
+  margin: 20px 0;
+  min-width: 360px;
+  text-align: center;
+  height: 50px;
+}
+
+#search-city {
+  font-size: 1.444em;
+  width: 80%;
+  max-width: 480px;
+}
+
+#search {
+  width: 15%;
+  max-width: 50px;
+  cursor: pointer;
+}
+
+#search:hover,
+#search:focus {
+  background-color: #52ffe1
+}
+
+#search-city, #search {
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: 'Anton', sans-serif;
+  vertical-align: middle;
+  background-color: #d1fff7;
 }
 
 /* WEATHER DISPLAY */
 
 #weather-card {
   margin: 30px auto;
-  height: 240px;
+  padding: 20px 0;
   min-width: 360px;
   max-width: 600px;
-  background-color: #7a7;
-  display: flex;
+  background-color: rgba(0,0,0,0);
   justify-content: space-between;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-size: 1.1em;
 }
 
-#weather-card > div {
-  border: 2px solid black;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+#weather > h2, p {
+  margin-bottom: 10px;
 }
 
 #switchUnits {
-  height: 50px;
-  width: 50px;
-  align-self: center;
+  margin-top: 20px;
+  width: 60px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+}
+
+#switchUnits:hover,
+#switchUnits:focus {
+  background-color: #444;
 }

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Odin Weather</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
   <link rel="stylesheet" href="./styles/reset.css">
   <link rel="stylesheet" href="./styles/style.css">
   <script src="main.js" defer></script>
@@ -11,11 +12,11 @@
 <body>
   <header>
     <h1 id="title">Odin Weather App</h1>
-    <form>
-      <input type="text" name="search-city" id="search-city">
-      <button id="search">Search</button>
-    </form>
   </header>
+  <form id="search-form">
+    <input type="text" name="search-city" id="search-city" placeholder="Search for City">
+    <button id="search"><i class="fas fa-search"></i></button>
+  </form>
   <section id="weather-card">
     <div id="weather">
       <h2 id="location">City, Country</h2>
