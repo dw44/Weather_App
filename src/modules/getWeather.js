@@ -14,7 +14,7 @@ const getWeather = function weather () {
       let x = await loadJson(url);
        return x;
     } catch(error) {
-      console.log(error);
+      // console.log(error);
     }
   } 
 
@@ -24,7 +24,7 @@ const getWeather = function weather () {
       let x = await loadJson(url);
       return x;
     } catch(error) {
-      console.log(error);
+      // console.log(error);
     }
   }
 
