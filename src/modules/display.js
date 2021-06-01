@@ -1,6 +1,6 @@
 import unitConversion from './unitConversion';
 
-const display = function () {
+const display = function Display() {
   const printWithUnits = (temperature, unit) => `${temperature}° ${unit}`;
 
   const capitalizeFirst = (text) => `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
