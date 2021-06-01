@@ -18,7 +18,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new DotenvWebpackPlugin()
+    new DotenvWebpackPlugin(),
   ],
   mode: 'production',
   watch: false,

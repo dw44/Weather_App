@@ -1,37 +1,37 @@
-const getWeather = function weather () { 
-  const loadJson = async url => {
-    let response = await fetch(url);
+const getWeather = function weather() {
+  const loadJson = async (url) => {
+    const response = await fetch(url);
     if (response.status === 200) {
-      let json = await response.json();
+      const json = await response.json();
       return json;
     }
-    throw new Error (response.status);
-  }
+    throw new Error(response.status);
+  };
 
-  const getFromCityName = async city => {
+  const getFromCityName = async (city) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}`;
     try {
-      let x = await loadJson(url);
-       return x;
-    } catch(error) {
+      const x = await loadJson(url);
+      return x;
+    } catch (error) {
       // console.log(error);
     }
-  } 
+  };
 
   const getFromCoordinates = async (latitude, longitude) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${Number(latitude).toFixed(3)}&lon=${Number(longitude).toFixed(3)}&appid=${process.env.API_KEY}`;
     try {
-      let x = await loadJson(url);
+      const x = await loadJson(url);
       return x;
-    } catch(error) {
+    } catch (error) {
       // console.log(error);
     }
-  }
+  };
 
   return {
     getFromCoordinates,
     getFromCityName,
   };
-}  
+};
 
 export default getWeather;
