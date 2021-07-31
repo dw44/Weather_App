@@ -4,7 +4,7 @@
 ## Functionality
 The App, upon being loaded, prompts the user for their location, and if permission is granted, fetches the weather data for that location from the openweather API. This location is saved in local storage for subsequent visits.
 
-![onload](./demo/onoad.gif)
+![onload](./demo/onload.gif)
 
 ![search] (./demo/search.gif)
 
